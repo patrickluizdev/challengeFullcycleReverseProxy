@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+  nginx:
+    build: 
+      context: .
+      dockerfile: Dockerfile.nginx
+    container_name: nginx
+    restart: always
+    tty: true
+    networks:
+      - nodenet
+    ports:
+      - "8080:80"
+    depends_on:
+      - app
+
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile.node
+    volumes:
+      - ./node:/usr/src/app
+    container_name: app
+    # entrypoint: node index.js"
+    tty: true
+    cpu_shares: 10
+    restart: always
+    networks:
+      - nodenet
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+
+  db: 
+    image: mysql:5.7
+    command: --innodb-use-native-aio=0
+    container_name: db
+    restart: always
+    tty: true
+    mem_limit: 152m
+    cpu_shares: 15
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=nodedb
+      - MYSQL_ROOT_PASSWORD=jatabara
+      - MYSQL_USER=jatabara
+    networks:
+      - nodenet
+
+
+networks:
+  nodenet:
+    driver: bridge
