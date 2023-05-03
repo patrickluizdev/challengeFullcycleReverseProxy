@@ -5,6 +5,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile.nginx
+      image: jatabara/nginx:node
     container_name: nginx
     restart: always
     tty: true
@@ -19,6 +20,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile.node
+      image: jatabara/node:bd
     volumes:
       - ./node:/usr/src/app
     container_name: app
