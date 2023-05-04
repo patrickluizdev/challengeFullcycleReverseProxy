@@ -18,7 +18,7 @@ Para executar o programa, siga as seguintes instruções:
     $ docker-compose up --d --build
     ```
        
-3. Pode-se visualizar novamente o output do programa através do seguinte comando:
+3. Pode-se visualizar os containers com o seguinte comando:
 
     ```
     $ docker compose ps
