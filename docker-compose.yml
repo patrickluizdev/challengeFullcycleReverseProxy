@@ -5,7 +5,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile.nginx
-      image: jatabara/nginx:node
+    image: jatabara/nginx:node
     container_name: nginx
     restart: always
     tty: true
@@ -20,7 +20,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile.node
-      image: jatabara/node:bd
+    image: jatabara/node:bd
     volumes:
       - ./node:/usr/src/app
     container_name: app
@@ -35,15 +35,12 @@ services:
     depends_on:
       - db
 
-
   db: 
     image: mysql:5.7
     command: --innodb-use-native-aio=0
     container_name: db
     restart: always
     tty: true
-    mem_limit: 152m
-    cpu_shares: 15
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
@@ -52,7 +49,6 @@ services:
       - MYSQL_USER=jatabara
     networks:
       - nodenet
-
 
 networks:
   nodenet:
