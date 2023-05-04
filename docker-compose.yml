@@ -24,9 +24,7 @@ services:
     volumes:
       - ./node:/usr/src/app
     container_name: app
-    # entrypoint: node index.js"
     tty: true
-    cpu_shares: 10
     restart: always
     networks:
       - nodenet

@@ -7,4 +7,5 @@ done
 
 echo "O banco de dados está pronto. Executando o script..."
 # Comando para rodar o script
-node index.js
+npm install
+pm2 start index.js

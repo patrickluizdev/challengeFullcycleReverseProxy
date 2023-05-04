@@ -1,17 +1,15 @@
-# Define a imagem base
-FROM node:15
+FROM node:14-alpine
 
-# Define o diretório de trabalho da aplicação dentro do container
 WORKDIR /usr/src/app
 
+RUN apk update
+RUN apk add --no-cache netcat-openbsd
 RUN npm install
-
 RUN npm install mysql --save
+# RUN npm install pm2 -g
 
-RUN npm pm2 -g
-
-RUN chmod 777 init.sh
+COPY node/alpine-init.sh .
+RUN chmod +x alpine-init.sh
 
 EXPOSE 3000
-
-# ENTRYPOINT [ "./init.sh" ]
+CMD [ "sh", "alpine-init.sh" ]
