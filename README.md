@@ -6,7 +6,7 @@ Este é um desafio proposto pela FullCycle que colocou em prática o que abordad
 
 Para executar o programa, siga as seguintes instruções:
 
-1. Verifique se sua maquina contem o docker e o docker-compose instalados
+1. Verifique se sua maquina contem o docker e o docker-compose instalados:
 
     ```
     $ docker --version && docker-compose --version
