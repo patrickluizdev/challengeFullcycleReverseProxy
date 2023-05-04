@@ -2,6 +2,8 @@
 
 Este é um desafio proposto pela FullCycle que colocou em prática o que abordado em relação a utilização do nginx como proxy reverso. A idéia principal é que quando um usuário acesse o nginx, o mesmo fará uma chamada na aplicação node.js. Essa aplicação por sua vez adicionará um registro em nosso banco de dados mysql, permitindo cadastrar e visualizar os dados.
 
+#### OBS: Foram criados scripts para melhor integração entre os serviço nos containers com a finalidade de inibir possiveis falhas.
+
 ## Instruções para execução
 
 Para executar o programa, siga as seguintes instruções:
