@@ -32,7 +32,7 @@ O serviço nginx é construído a partir do Dockerfile Dockerfile.nginx, usa a i
 
 Os serviços nginx, app e db são todos conectados à rede nodenet, que é definida como uma rede de driver de bridge oque permite a comunicação segura entre as aplicações e a configuração de um proxy reverso com Nginx.
 
-O uso de uma dependência de conexão com o banco de dados e um proxy reverso ajuda a separar as preocupações entre diferentes componentes de um sistema e promove a escalabilidade, a segurança e a confiabilidade da aplicação. Além disso, permite que você gerencie a infraestrutura de rede de maneira mais eficiente e melhore a experiência do usuário, garantindo que as solicitações sejam atendidas rapidamente e sem interrupções.
+O uso de uma dependência de conexão com o banco de dados e um proxy reverso ajuda a separar as preocupações entre diferentes componentes de um sistema e promove a escalabilidade, a segurança e a confiabilidade da aplicação. Além disso, permite que você gerencie a infraestrutura de rede de maneira mais eficiente segura.
 
 ## Repositório Docker Hub das imagens
 https://hub.docker.com/repository/docker/jatabara/nginx/general
