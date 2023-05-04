@@ -2,7 +2,7 @@
 
 Este é um desafio proposto pela FullCycle que colocou em prática o que abordado em relação a utilização do nginx como proxy reverso. A idéia principal é que quando um usuário acesse o nginx, o mesmo fará uma chamada na aplicação node.js. Essa aplicação por sua vez adicionará um registro em nosso banco de dados mysql, permitindo cadastrar e visualizar os dados.
 
-#### OBS: Foi desenvolvido scripts com o objetivo de garantir uma integração adequada entre os serviços dentro dos containers. Esses scripts são responsáveis por executar ações específicas, como esperar o banco de dados iniciar antes de executar o aplicativo, verificar se o serviço do aplicativo está online e reiniciar o serviço se necessário evitando sobrecarregar o projeto com pacotes e serviços legados desnecessarios melhorando o desempenho da aplicação e imagens mais leves.
+ _OBS: Foi desenvolvido scripts com o objetivo de garantir uma integração adequada entre os serviços dentro dos containers. Esses scripts são responsáveis por executar ações específicas, como esperar o banco de dados iniciar antes de executar o aplicativo, verificar se o serviço do aplicativo está online e reiniciar o serviço se necessário evitando sobrecarregar o projeto com pacotes e serviços legados desnecessarios melhorando o desempenho da aplicação e imagens mais leves._
 
 ## Instruções para execução
 
