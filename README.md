@@ -34,10 +34,11 @@ Os serviços nginx, app e db são todos conectados à rede nodenet, que é defin
 
 O uso de uma dependência de conexão com o banco de dados e um proxy reverso ajuda a separar as preocupações entre diferentes componentes de um sistema e promove a escalabilidade, a segurança e a confiabilidade da aplicação. Além disso, permite que você gerencie a infraestrutura de rede de maneira mais eficiente segura.
 
+* O script cria diretorios na raíz do projeto para que possa compartilhar os arquivos com o ambiente de produção, pode ser adicionado ao dockerfile.node a instalação do pm2 `RUN npm install pm2` e com a mudança no script node/alpine-init.sh linha 11 para `pm2 start index.js --watch --watch-dir /usr/src/app` O PM2 irá monitorar todos os arquivos no diretório /usr/src/app para alterações e reiniciar o processo do aplicativo sempre que uma alteração for detectada, para acompanhar o processo utilize `pm2 status`.*
+
 ## Repositório Docker Hub das imagens
-https://hub.docker.com/repository/docker/jatabara/nginx/general
-[Imagem Nginx](https://hub.docker.com/layers/jatabara/nginx/node/images/sha256-61d49803ae915a072e283438eea70a3cb3765e75aed16c56868f2195b4f04b22?context=repo)
-[Imagem Node](https://hub.docker.com/layers/jatabara/node/bd/images/sha256-c0359f7ed108c30c8e533f90f1e36090f3207d0e903fc51583ba1272b4991d98?context=repo)
+* [Imagem Nginx](https://hub.docker.com/layers/jatabara/nginx/node/images/sha256-61d49803ae915a072e283438eea70a3cb3765e75aed16c56868f2195b4f04b22?context=repo)
+* [Imagem Node](https://hub.docker.com/layers/jatabara/node/bd/images/sha256-c0359f7ed108c30c8e533f90f1e36090f3207d0e903fc51583ba1272b4991d98?context=repo)
 
 ## Repositório do desenvolvimento
 https://github.com/patrickluizdev/integrationSystem
