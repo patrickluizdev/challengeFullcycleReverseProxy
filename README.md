@@ -42,4 +42,3 @@ O uso de uma dependência de conexão com o banco de dados e um proxy reverso aj
 
 ## Repositório do desenvolvimento
 https://github.com/patrickluizdev/integrationSystem
-

@@ -30,8 +30,8 @@ function createTable() {
     if (error) throw error;
     console.log('Table created successfully');
   });
-  createTable();
 }
+createTable();
 
 app.get("/", (req, res) => {
   db.query("SELECT name FROM people", (err, result) => {
@@ -79,4 +79,3 @@ app.post("/add-name", (req, res) => {
 });
 
 app.listen(port, () => console.log(`App listening on port ${port}`));
-
